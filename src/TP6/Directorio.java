@@ -5,11 +5,10 @@
  */
 package TP6;
 
-import java.util.*;
-import javax.swing.JOptionPane;
-
-
-
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeMap;
 
 /**
  *
@@ -21,13 +20,7 @@ public class Directorio {
    
   
     public void agregarCliente(Long l, Cliente c){
-        if(lista.put(l,c)==c){
-            
-            JOptionPane.showMessageDialog(null, "no se puede agregar");
-        }else{
-            JOptionPane.showMessageDialog(null, "se puede agregar");
-                    lista.put(l,c);
-        }
+        lista.put(l,c);
     }
     
     public Cliente buscarCliente(Long tel){
@@ -69,18 +62,17 @@ public class Directorio {
         return clientes;
         
     }
-    public Collection<Cliente> borrarCliente(Long dni){
+    public boolean borrarCliente(Long dni){
      Set<Long>llaves=lista.keySet();
-     Collection<Cliente>clientes=new HashSet();
+     
         
         for(long l: llaves){
             Cliente c=lista.get(l);
             if(c.getDni() == dni){
-                clientes.add(lista.get(l));
-                lista.remove(l);
+                return lista.remove(l, c);
             }
         }
-        return clientes;
+       return false;
         
         
     }
