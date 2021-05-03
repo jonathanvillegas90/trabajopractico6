@@ -188,22 +188,20 @@ public class ViewAgregarCliente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbGuardarActionPerformed
-       try{
-        long dni=Long.parseLong(jtDni.getText());
+       
+        Long dni=Long.parseLong(jtDni.getText());
         String ape=jtApellido.getText();
         String nom=jtNombre.getText();
         String ciu=jtCiudad.getText();
         String dir=jtDireccion.getText();
-        long telefono=Long.parseLong(jtTelefono.getText());
-        
+        Long tel=Long.parseLong(jtTelefono.getText());
+     
         Cliente cliente=new Cliente(dni,nom,ape,ciu,dir);
-
-        directorio.agregarCliente(telefono,cliente);
-       
-       }catch(NumberFormatException nfe){
-           JOptionPane.showMessageDialog(this,"Dni o teléfono incorrectos");
-       }
         
+        directorio.agregarCliente(tel,cliente);
+        
+        
+        JOptionPane.showMessageDialog(this, "Cliente agregado correctamente");
     }//GEN-LAST:event_jbGuardarActionPerformed
 
     private void jbNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNuevoActionPerformed

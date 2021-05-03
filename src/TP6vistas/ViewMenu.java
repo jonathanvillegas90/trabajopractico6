@@ -12,7 +12,7 @@ import TP6.Directorio;
  * @author Chony
  */
 public class ViewMenu extends javax.swing.JFrame {
-private Directorio directorio=new Directorio();
+    private Directorio directorio=new Directorio();
     /**
      * Creates new form ViewMenu
      */
@@ -173,7 +173,7 @@ private Directorio directorio=new Directorio();
         escritorio.removeAll();
         escritorio.repaint();
         
-        ViewBuscarClienteTelefono b=new ViewBuscarClienteTelefono();
+        ViewBuscarClienteTelefono b=new ViewBuscarClienteTelefono(directorio);
         b.setVisible(true);
         escritorio.add(b);
         escritorio.moveToFront(b);
@@ -183,7 +183,7 @@ private Directorio directorio=new Directorio();
          escritorio.removeAll();
         escritorio.repaint();
         
-        ViewBuscarClienteApellido c=new ViewBuscarClienteApellido();
+        ViewBuscarClienteApellido c=new ViewBuscarClienteApellido(directorio);
         c.setVisible(true);
         escritorio.add(c);
         escritorio.moveToFront(c);
@@ -193,7 +193,7 @@ private Directorio directorio=new Directorio();
          escritorio.removeAll();
         escritorio.repaint();
         
-        ViewBuscarClienteCiudad d=new ViewBuscarClienteCiudad();
+        ViewBuscarClienteCiudad d=new ViewBuscarClienteCiudad(directorio);
         d.setVisible(true);
         escritorio.add(d);
         escritorio.moveToFront(d);
@@ -203,7 +203,7 @@ private Directorio directorio=new Directorio();
          escritorio.removeAll();
         escritorio.repaint();
         
-        ViewBorrarCliente borrar=new ViewBorrarCliente();
+        ViewBorrarCliente borrar=new ViewBorrarCliente(directorio);
         borrar.setVisible(true);
         escritorio.add(borrar);
         escritorio.moveToFront(borrar);

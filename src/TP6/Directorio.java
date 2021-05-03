@@ -6,6 +6,7 @@
 package TP6;
 
 import java.util.*;
+import javax.swing.JOptionPane;
 
 
 
@@ -16,12 +17,17 @@ import java.util.*;
  */
 public class Directorio {
    
-    TreeMap<Long, Cliente> lista;
+    TreeMap<Long, Cliente> lista=new TreeMap<>();
    
   
     public void agregarCliente(Long l, Cliente c){
-        lista.put(l,c);
-        
+        if(lista.put(l,c)==c){
+            
+            JOptionPane.showMessageDialog(null, "no se puede agregar");
+        }else{
+            JOptionPane.showMessageDialog(null, "se puede agregar");
+                    lista.put(l,c);
+        }
     }
     
     public Cliente buscarCliente(Long tel){
